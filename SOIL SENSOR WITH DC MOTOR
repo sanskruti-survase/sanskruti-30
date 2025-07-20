@@ -1,0 +1,23 @@
+int soil=A0;
+int motor=13;
+void setup()
+{
+  pinMode(soil,INPUT);
+  pinMode(motor,OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  soil=analogRead(A0);
+  Serial.println(soil);
+  delay(500);
+  if (soil < 100)
+  {
+    digitalWrite(motor,HIGH);
+  }
+  else
+  {
+    digitalWrite(motor,LOW);
+  }
+}
+  
